@@ -15,8 +15,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('code/{pattern}', 'SearchController@byCode');
-Route::get('name/{pattern}', 'SearchController@byName');
-Route::get('search/{pattern}', 'SearchController@byBoth');
-
-
-// http://localhost/postcode_api-master/public/api/search/stuttgart
