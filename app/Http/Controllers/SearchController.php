@@ -19,7 +19,7 @@ class SearchController extends Controller {
             $stack = array();
             $zip = Zip::where('name', 'LIKE', $pattern . '%')->get();
             foreach($zip as $i)
-                array_push($stack, $i["name"], $i["code"]);
+                array_push($stack, [$i["code"], $i["name"]]);
             return $stack;
         }
 
