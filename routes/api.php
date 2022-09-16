@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('code/{pattern}', 'SearchController@byCode');
+Route::get('{pattern}', 'SearchController@both');
+Route::get('name/{pattern}', 'SearchController@name');
+Route::get('code/{pattern}', 'SearchController@code');
