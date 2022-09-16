@@ -141,9 +141,9 @@
         </form>
         <details>
             <summary>mach deinen eigenen Call!</summary>
-            <a href="http://guteplaces.de/api/{{$search}}" target=“_blank”><summary>http://guteplaces.de/api/{{$search}}</summary></a>
-            <a href="http://guteplaces.de/api/code/{{$search}}" target=“_blank”><summary>http://guteplaces.de/api/code/{{$search}}</summary></a>
-            <a href="http://guteplaces.de/api/name/{{$search}}" target=“_blank”><summary>http://guteplaces.de/api/name/{{$search}}</summary></a>
+            <a href="http://guteplaces.de/api/berlin" target=“_blank”><summary>http://guteplaces.de/api/berlin</summary></a>
+            <a href="http://guteplaces.de/api/code/10115" target=“_blank”><summary>http://guteplaces.de/api/code/10115</summary></a>
+            <a href="http://guteplaces.de/api/name/berlin" target=“_blank”><summary>http://guteplaces.de/api/name/berlin</summary></a>
         </details>
         
         <details>
