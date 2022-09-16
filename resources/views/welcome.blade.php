@@ -31,6 +31,7 @@
     }
 
     input {
+        cursor: default;
         margin-top: 2%;
         height: 50px;
         width: 100%;
@@ -78,13 +79,13 @@
     }
 
     @keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        0% {
+            opacity: 0;
         }
+        100% {
+            opacity: 1;
+        }
+    }
 
     .kreis {
         z-index: -1;
@@ -99,22 +100,22 @@
         background: #9C7335;
         animation: fill 5s ease infinite;
     }
-        @keyframes fill {
-    0% {
-        top: -178%;
-        left: -40%;
+    @keyframes fill {
+        0% {
+            top: -178%;
+            left: -40%;
+        }
+        
+        50% {
+            top: -178%;
+            left: -39.5%;
+        }
+        
+        100% {
+            top: -178%;
+            left: -40%;
+        }
     }
-    
-    50% {
-        top: -178%;
-        left: -39.5%;
-    }
-    
-    100% {
-        top: -178%;
-        left: -40%;
-    }
-}
 
 
 
@@ -132,17 +133,17 @@
         <form>
             <input type="text" placeholder="welche Stadt?" list="citys">
 
-            {{-- <datalist id="citys">
+            <datalist id="citys">
                 @foreach ($test as $item)
                     <option value="{{$item->code}} {{$item->name}}">{{$item->code}} {{$item->name}}</option>   
                 @endforeach
-            </datalist> --}}
+            </datalist>
         </form>
         <details>
             <summary>mach deinen eigenen Call!</summary>
-            <summary><a href="http://guteplaces.de/api/berlin" target=“_blank”>http://guteplaces.de/api/berlin</a></summary>
-            <summary><a href="http://guteplaces.de/api/code/10115" target=“_blank”>http://guteplaces.de/api/code/10115</a></summary>
-            <summary><a href="http://guteplaces.de/api/name/berlin" target=“_blank”>http://guteplaces.de/api/name/berlin</a></summary>
+            <a href="http://guteplaces.de/api/{{$search}}" target=“_blank”><summary>http://guteplaces.de/api/{{$search}}</summary></a>
+            <a href="http://guteplaces.de/api/code/{{$search}}" target=“_blank”><summary>http://guteplaces.de/api/code/{{$search}}</summary></a>
+            <a href="http://guteplaces.de/api/name/{{$search}}" target=“_blank”><summary>http://guteplaces.de/api/name/{{$search}}</summary></a>
         </details>
         
         <details>
