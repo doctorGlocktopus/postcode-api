@@ -32,7 +32,7 @@
 
     input {
         margin-top: 2%;
-        height: 10%;
+        height: 50px;
         width: 100%;
         font-size: 150%;
     }
@@ -132,17 +132,17 @@
         <form>
             <input type="text" placeholder="welche Stadt?" list="citys">
 
-            <datalist id="citys">
+            {{-- <datalist id="citys">
                 @foreach ($test as $item)
                     <option value="{{$item->code}} {{$item->name}}">{{$item->code}} {{$item->name}}</option>   
                 @endforeach
-            </datalist>
+            </datalist> --}}
         </form>
         <details>
             <summary>mach deinen eigenen Call!</summary>
             <summary><a href="http://guteplaces.de/api/berlin" target=“_blank”>http://guteplaces.de/api/berlin</a></summary>
-            <summary><a href="http://guteplaces.de/code/10115" target=“_blank”>http://guteplaces.de/api/code/10115</a></summary>
-            <summary><a href="http://guteplaces.de/name/berlin" target=“_blank”>http://guteplaces.de/api/name/berlin</a></summary>
+            <summary><a href="http://guteplaces.de/api/code/10115" target=“_blank”>http://guteplaces.de/api/code/10115</a></summary>
+            <summary><a href="http://guteplaces.de/api/name/berlin" target=“_blank”>http://guteplaces.de/api/name/berlin</a></summary>
         </details>
         
         <details>
