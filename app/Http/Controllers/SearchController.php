@@ -8,6 +8,7 @@ use App\Models\Zip;
 
 class SearchController extends Controller {
     public function both($pattern) {
+        error_reporting (E_ALL);
         if(is_numeric($pattern)) {
             $stack = array();
             $zip = Zip::where('code', 'LIKE', $pattern . '%')->get();
@@ -24,6 +25,7 @@ class SearchController extends Controller {
     }
 
     public function code($pattern) {
+        error_reporting (E_ALL);
         if(is_numeric($pattern)) {
             $stack = array();
             $zip = Zip::where('code', 'LIKE', $pattern . '%')->get();
@@ -34,6 +36,7 @@ class SearchController extends Controller {
     }
 
     public function name($pattern) {
+        error_reporting (E_ALL);
         if(!is_numeric($pattern)) {
             $stack = array();
             $zip = Zip::where('name', 'LIKE', $pattern . '%')->get();
