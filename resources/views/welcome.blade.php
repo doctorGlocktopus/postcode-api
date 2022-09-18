@@ -120,6 +120,12 @@
 
 </style>
 <script src="https://unpkg.com/alpinejs"></script>
+<script>
+    function get() {
+        let x = document.getElementById("citys").value;
+        console.log(x);
+    }
+</script>
 
 <div id="main">
     <div class="content" x-data>
@@ -130,7 +136,7 @@
         </article>
 
         <form>
-            <input type="text" placeholder="welche Stadt?" list="citys">
+            <input onchange="get()" type="text" placeholder="welche Stadt?" list="citys">
 
             <datalist id="citys">
                 @foreach ($test as $item)
