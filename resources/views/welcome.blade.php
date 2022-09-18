@@ -10,8 +10,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        height: 100%;
-        width: 100%;
         padding: 5%;
     }
 
@@ -41,6 +39,7 @@
     .content {
         background-color: #2D9C54;
         width: 50%;
+        min-width: 590px;
         padding: 2%;
     }
 
