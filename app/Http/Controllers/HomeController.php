@@ -8,9 +8,8 @@ use App\Models\Zip;
 class HomeController extends Controller
 {
     public function index() {
-        $search = "plz||name";
-        $test = Zip::all();
-        return view('welcome', compact('test', 'search'));
+        $zip = Zip::all();
+        return view('welcome', compact('zip'));
 
         // $search = "plz||name";
         // $test = array();
