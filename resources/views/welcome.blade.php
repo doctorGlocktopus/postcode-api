@@ -120,10 +120,8 @@
     }
 </style>
 <script src="https://unpkg.com/alpinejs"></script>
-    @livewireStyles
 </head>
 <body>
-    @livewireScripts
 <div id="main">
     <div class="content" x-data>
         <title>gutePlaces</title>
@@ -141,9 +139,9 @@
         </form>
         <details open>
             <summary>mach deinen eigenen Call!</summary>
-            <a href="http://guteplaces.de/api/Berlin" target=“_blank”><summary>http://guteplaces.de/api/Berlin</summary></a>
-            <a href="http://guteplaces.de/api/code/10115" target=“_blank”><summary>http://guteplaces.de/api/code/10115</summary></a>
-            <a href="http://guteplaces.de/api/name/Berlin" target=“_blank”><summary>http://guteplaces.de/api/name/Berlin</summary></a>
+            <a href="https://guteplaces.de/api/Berlin" target=“_blank”><summary>https://guteplaces.de/api/Berlin</summary></a>
+            <a href="https://guteplaces.de/api/code/10115" target=“_blank”><summary>https://guteplaces.de/api/code/10115</summary></a>
+            <a href="https://guteplaces.de/api/name/Berlin" target=“_blank”><summary>https://guteplaces.de/api/name/Berlin</summary></a>
         </details>
         
         <details>
