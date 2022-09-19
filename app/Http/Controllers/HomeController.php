@@ -10,9 +10,5 @@ class HomeController extends Controller
     public function index() {
         $zip = Zip::all();
         return view('welcome', compact('zip'));
-
-        // $search = "plz||name";
-        // $test = array();
-        // return view('welcome');
     }
 }

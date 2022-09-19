@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <style>
     body {
+        overflow: hidden;
         font-family: monospace;
         background-color: #5AE88C;
     }
@@ -117,9 +118,6 @@
             left: -40%;
         }
     }
-
-
-
 </style>
 <script src="https://unpkg.com/alpinejs"></script>
     @livewireStyles
