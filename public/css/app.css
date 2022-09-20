@@ -65,15 +65,31 @@ a {
     position: fixed;
 }
 
+dialog::-webkit-backdrop {
+    background: rgba(255, 255, 255, 0.452);
+}
+
 dialog::backdrop {
     background: rgba(255, 255, 255, 0.452);
 }
 
 dialog {
     border-radius: 10px;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    -webkit-animation: fadeInAnimation ease 1s;
+            animation: fadeInAnimation ease 1s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInAnimation {
@@ -97,7 +113,24 @@ dialog {
     line-height: 500%;
     text-align: center;
     background: #9C7335;
-    animation: fill 5s ease infinite;
+    -webkit-animation: fill 5s ease infinite;
+            animation: fill 5s ease infinite;
+}
+@-webkit-keyframes fill {
+    0% {
+        top: -178%;
+        left: -40%;
+    }
+    
+    50% {
+        top: -178%;
+        left: -39.5%;
+    }
+    
+    100% {
+        top: -178%;
+        left: -40%;
+    }
 }
 @keyframes fill {
     0% {
