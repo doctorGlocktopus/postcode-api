@@ -33,15 +33,9 @@
         <summary @click="$refs.imprint.showModal()">Impressum</summary>
         
         <dialog x-ref="imprint"  @click="$refs.imprint.close()">
-            <p>
-                Fabian Laske
-            </p>
-            <p>
-                flaske@anche.no
-            </p>
-            <p>
-                <a target="blank" href="https://github.com/doctorGlocktopus">https://github.com/doctorGlocktopus</a>
-            </p>
+            <div class="imprint" onclick="window.location.href ='http://www.github.com/doctorGlocktopus'"><i class="fa fa-user-tag"></i> Fabian Laske</div>
+            <br>
+            <div class="imprint" onclick="window.location.href ='mailto:flaske@anche.no'"><i class="fa fa-envelope"></i> flaske@anche.no</div>
         </dialog>
 
         <summary @click="$refs.dialog.showModal()">Datenschutzerklärung</summary>
