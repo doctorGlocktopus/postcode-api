@@ -1,3 +1,7 @@
+.padding2pc {
+    padding: 2%;
+}
+
 .imprint {
     cursor: pointer;
 }
@@ -78,6 +82,7 @@ dialog::backdrop {
 }
 
 dialog {
+
     border-radius: 10px;
     -webkit-animation: fadeInAnimation ease 1s;
             animation: fadeInAnimation ease 1s;
@@ -85,6 +90,10 @@ dialog {
             animation-iteration-count: 1;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+}
+
+.w80pc {
+    width: 80%;
 }
 
 @-webkit-keyframes fadeInAnimation {

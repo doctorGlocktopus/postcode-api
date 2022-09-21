@@ -20,12 +20,36 @@
             @endforeach
         </datalist>
     </form>
-    <details open>
-        <summary>mach deinen eigenen Call!</summary>
-        <a href="http://guteplaces.de/api/{{$name}}" target=“_blank”><summary>http://guteplaces.de/api/{{$name}}</summary></a>
-        <a href="http://guteplaces.de/api/code/{{$code}}" target=“_blank”><summary>http://guteplaces.de/api/code/{{$code}}</summary></a>
-        <a href="http://guteplaces.de/api/name/{{$name}}" target=“_blank”><summary>http://guteplaces.de/api/name/{{$name}}</summary></a>
-    </details>
+    @if($name or $code)
+        <details open>
+            <summary>mach deinen eigenen Call!</summary>
+
+            <div class="padding2pc imprint" @click="$refs.showJson.showModal()">http://guteplaces.de/api/{{$name}}</div>
+            <dialog class="w80pc" x-ref="showJson" @click="$refs.showJson.close()">
+                @if($name)
+                {{ file_get_contents("http://guteplaces.de/api/".$name)}}
+                @endif
+            </dialog>
+
+            <div class="padding2pc imprint" @click="$refs.showJson.showModal()">http://guteplaces.de/api/code/{{$code}}</div>
+            <dialog class="w80pc" x-ref="showJson" @click="$refs.showJson.close()">
+                @if($code)
+                {{ file_get_contents("http://guteplaces.de/api/code/".$code)}}
+                @endif
+            </dialog>
+
+            <div class="padding2pc imprint" @click="$refs.showJson.showModal()">http://guteplaces.de/api/name/{{$name}}</div>
+            <dialog class="w80pc" x-ref="showJson" @click="$refs.showJson.close()">
+                @if($name)
+                {{ file_get_contents("http://guteplaces.de/api/name/".$name)}}
+                @endif
+            </dialog>
+        </details>
+    @else
+        <details>
+            <summary>welcher Ort suchen wir?</summary>
+        </details>
+    @endif
     
     <details>
         <summary>F.A.Q</summary>
