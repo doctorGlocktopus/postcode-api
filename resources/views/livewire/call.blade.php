@@ -6,13 +6,8 @@
     <div>
         <script>
             function check() {
-                    if(@this.input == 'string') {
-                        string = 'http://guteplaces.de/api/name/';
-                    } else {
-                        string = 'http://guteplaces.de/api/code/';      
-                    }
-                    @this.json =  httpGet(string+@this.input);
-                    console.log(@this.json);
+                string = 'http://guteplaces.de/api/';
+                @this.json =  httpGet(string+@this.input);
             }
     
             function httpGet(theUrl) {
@@ -21,7 +16,7 @@
                 xmlHttpReq.send(null);
                 @this.stepper = 0;
                 return xmlHttpReq.responseText;
-                }
+            }
 
             function reset() {
                 if(@this.input != "")

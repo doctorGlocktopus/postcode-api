@@ -1,10 +1,13 @@
-.searchBar {
-    background: #3a3a3a7a!important;
-}
-
 .searchItem {
     padding: 1%;
     cursor: pointer;
+    background: #4a4a4a!important;
+    color: white;
+}
+
+.searchItem:hover {
+    background: #858585!important;
+    color: black;
 }
 
 .padding2pc {
