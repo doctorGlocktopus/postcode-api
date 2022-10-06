@@ -1,25 +1,43 @@
 <div class="content" x-data>
     <title>gutePlaces</title>
-
     <article>
         <span id="heading">gutePlaces</span>
     </article>
-    <script>
-        function shake() {
-            x = document.getElementById("city").value;
-            @this.input = x;
-            @this.name = x.replace(/[0-9]/g, '').trim();
-            @this.code = x.replace(/\D/g, '');
-        }
-    </script>
-    <form>
-        <input id="city" onchange="shake()" type="text" placeholder="welche Stadt?" list="citys">
-        <datalist id="citys">
-            @foreach ($zip as $item)
-                <option value="{{$item->code}} {{$item->name}}">{{$item->code}} {{$item->name}}</option>   
-            @endforeach
-        </datalist>
-    </form>
+    <div>
+        <script>
+            function check() {
+                    if(@this.input == 'string') {
+                        string = 'http://guteplaces.de/api/name/';
+                    } else {
+                        string = 'http://guteplaces.de/api/code/';      
+                    }
+                    @this.json =  httpGet(string+@this.input);
+                    console.log(@this.json);
+            }
+    
+            function httpGet(theUrl) {
+                let xmlHttpReq = new XMLHttpRequest();
+                xmlHttpReq.open("GET", theUrl, false); 
+                xmlHttpReq.send(null);
+                @this.stepper = 0;
+                return xmlHttpReq.responseText;
+                }
+
+            function reset() {
+                if(@this.input != "")
+                    @this.input = "";
+            }
+        </script>
+        <div>
+            <input onclick="reset()" class="form-control" wire:model="input" type="text" oninput="check()" wire:change='Utf8_ansi({{$json}})'>
+            @if($step == 1)
+                <div style="background: #3a3a3a7a;">
+                    @foreach($search as $data)
+                        <div class="searchItem" style="padding: 1%; cursor: pointer" wire:click="getData({{ $data }})">{{ $data["postcode"] }} {{ $data["city"] }}</div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
     @if($name or $code)
         <details open>
             <summary>mach deinen eigenen Call!</summary>
@@ -104,3 +122,5 @@
         </dialog>
     </details>
 </div>
+
+    </div>
