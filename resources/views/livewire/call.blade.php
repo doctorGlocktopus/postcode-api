@@ -4,7 +4,7 @@
         <span id="heading">gutePlaces</span>
     </article>
     <div>
-        <script>
+        {{-- <script>
             function check() {
                 string = 'http://guteplaces.de/api/';
                 @this.json =  httpGet(string+@this.input);
@@ -32,7 +32,23 @@
                     @endforeach
                 </div>
             @endif
-        </div>
+        </div> --}}
+        <script>
+            function shake() {
+                x = document.getElementById("city").value;
+                @this.input = x;
+                @this.name = x.replace(/[0-9]/g, '').trim();
+                @this.code = x.replace(/\D/g, '');
+            }
+        </script>
+        <form>
+            <input id="city" onchange="shake()" type="text" placeholder="welche Stadt?" list="citys">
+            <datalist id="citys">
+                @foreach ($zip as $item)
+                    <option value="{{$item->code}} {{$item->name}}">{{$item->code}} {{$item->name}}</option>   
+                @endforeach
+            </datalist>
+        </form>
     @if($name or $code)
         <details open>
             <summary>mach deinen eigenen Call!</summary>
