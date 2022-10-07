@@ -42,7 +42,7 @@
             }
         </script>
         <form>
-            <input id="city" onchange="shake()" type="text" placeholder="welche Stadt?" list="citys">
+            <input wire:click="selector()" id="city" onchange="shake()" type="text" placeholder="welche Stadt?" list="citys">
             <datalist id="citys">
                 @foreach ($zip as $item)
                     <option value="{{$item->code}} {{$item->name}}">{{$item->code}} {{$item->name}}</option>   

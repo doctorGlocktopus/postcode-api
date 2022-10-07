@@ -30,7 +30,7 @@ class Call extends Component
     public $step;
 
     public function mount() {
-        $this->zip = Zip::all();
+        $this->zip = Zip::limit(20)->get();
         $this->input = "";
         $this->code = "";
         $this->name = "";
@@ -130,6 +130,12 @@ class Call extends Component
     //     $this->code = $data["postcode"];
     //     $this->name = $data["city"];
     // }
+
+    public function selector() {
+        if(strlen($this->input) >= 1) {
+            $this->zip = Zip::all();
+        }
+    }
 
     public function render()
     {
